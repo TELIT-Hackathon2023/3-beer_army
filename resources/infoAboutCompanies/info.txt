@@ -1,0 +1,38 @@
+InfoBip(Entry level 7/10)
+
+This company develop application for communication inside other companies
+
+Player must be consider in Java, algorithmics. Also be able to create such as frontend as backend
+
+Stack 
+Back: Spring
+Frontend: React
+Androind: Kotlin
+-----------------------------------------------------------------------------------------
+
+
+Siemens healthineers(Entry level 8/10)
+
+This company specify on medicine, diagnostic, aftercare and so on
+
+Player shoud keen on medicine, work with big data, IoT, AI
+
+Stack
+Programming language: Python and R
+Data Analysis Libraries: Pandas, NumPy, and SciPy 
+Data Visualization Tools: Matplotlib, Seaborn, or Plotly
+Database Management Systems: SQL-based systems 
+
+---------------------------------------------------------------------------
+
+Unicorn(Entry level 6/10)
+
+This company create business solution like TatraBank, app for govermant etc
+
+Player should be well-knowing about security. Also should be able to create backedn and frontend but mainly be consider with Java
+
+Stack
+Back: Spring
+Frontend: Angular
+Mobile: Flutter
+

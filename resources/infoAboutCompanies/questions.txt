@@ -1,0 +1,69 @@
+InfoBip (Java Developer, Entry Level 7/10)
+
+Which framework is commonly used in Java for building web applications?
+a) Django
+b) Flask
+c) Spring
+d) Laravel
+
+Correct Answer: c) Spring
+In React, what is used to manage the state of the application?
+a) State Object
+b) setState()
+c) Redux
+d) All of the above
+
+Correct Answer: d) All of the above
+What is a primary advantage of using Kotlin for Android development?
+a) Cross-platform capabilities
+b) Less boilerplate code than Java
+c) Faster execution than Python
+d) Better web development tools
+
+Correct Answer: b) Less boilerplate code than Java
+Siemens Healthineers (Healthcare Data Specialist, Entry Level 8/10)
+
+Which Python library is used primarily for data manipulation and analysis?
+a) TensorFlow
+b) Pandas
+c) PyTorch
+d) Scikit-learn
+
+Correct Answer: b) Pandas
+What is R mainly used for?
+a) Web development
+b) Statistical computing and graphics
+c) Game development
+d) Mobile app development
+
+Correct Answer: b) Statistical computing and graphics
+Which of these is a SQL-based database management system?
+a) MongoDB
+b) Cassandra
+c) PostgreSQL
+d) Neo4j
+
+Correct Answer: c) PostgreSQL
+Unicorn (Java Developer, Entry Level 6/10)
+
+What is Spring primarily used for in Java development?
+a) Creating responsive web designs
+b) Building enterprise applications
+c) Data visualization
+d) Mobile app development
+
+Correct Answer: b) Building enterprise applications
+Which framework is used for building single-page applications in JavaScript?
+a) React
+b) Vue.js
+c) Angular
+d) Ember.js
+
+Correct Answer: c) Angular
+What is Flutter primarily used for?
+a) Backend development
+b) Desktop applications
+c) Mobile app development
+d) Machine learning
+
+Correct Answer: c) Mobile app development
