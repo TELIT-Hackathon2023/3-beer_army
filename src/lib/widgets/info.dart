@@ -14,7 +14,7 @@ class InfoWiget extends StatelessWidget {
         children: <Widget>[
           Container(
             padding: const EdgeInsets.all(15),
-            color: Colors.pink,
+            color: const Color.fromARGB(255, 255, 0, 144),
             child: const Text(
               'Deutsche Telekom',
               style: TextStyle(

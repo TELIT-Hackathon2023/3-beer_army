@@ -1,12 +1,19 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:game_project/screens/activity_tracker.dart';
 import 'package:game_project/screens/map_screen.dart';
+import 'package:game_project/screens/notification_screen.dart';
+import 'package:game_project/screens/queez_screen.dart';
+import 'package:game_project/screens/skills_screen.dart';
+import 'package:game_project/widgets/animated_boy_widget.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class MainScreen extends StatefulWidget {
-  const MainScreen({super.key});
+  MainScreen(this.level, this.isFirstPhoto, {super.key});
 
+  bool isFirstPhoto = true;
+  String level = '1';
   @override
   State<MainScreen> createState() => _MainScreenState();
 }
@@ -17,24 +24,43 @@ class _MainScreenState extends State<MainScreen> {
         .push(MaterialPageRoute(builder: (ctx) => MapScreen()));
   }
 
-  int currentPageIndex = 0;
+  int currentPageIndex = 1;
   static const IconData workspace_premium =
       IconData(0xf05ae, fontFamily: 'MaterialIcons');
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          'JobFinder',
-          style: GoogleFonts.baloo2(fontWeight: FontWeight.bold),
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Text(
+              'TECH ',
+              style: GoogleFonts.baloo2(fontWeight: FontWeight.bold),
+            ),
+            Text(
+              'TERRA',
+              style: GoogleFonts.baloo2(
+                fontWeight: FontWeight.bold,
+                color: const Color.fromARGB(255, 185, 0, 0),
+              ),
+            ),
+          ],
         ),
         centerTitle: false,
         actions: [
-          IconButton(
-            icon: const Icon(Icons.notifications_none_sharp, size: 30),
-            onPressed: () {
-              // Add your action when the icon is pressed
-            },
+          Padding(
+            padding: const EdgeInsets.only(right: 8.0),
+            child: InkWell(
+              onTap: () {
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (builder) => NotificationScreen()));
+              },
+              child: Badge(
+                label: Text('3'),
+                child: const Icon(Icons.notifications_none_sharp, size: 30),
+              ),
+            ),
           ),
         ],
       ),
@@ -59,7 +85,7 @@ class _MainScreenState extends State<MainScreen> {
           ),
           BottomNavigationBarItem(
             icon: Badge(child: Icon(Icons.stars_sharp)),
-            label: 'Stars',
+            label: 'Stats',
           ),
         ],
       ),
@@ -115,6 +141,20 @@ class _MainScreenState extends State<MainScreen> {
                                         fontWeight: FontWeight.w400,
                                       ),
                                     ),
+                                    SizedBox(width: 30),
+                                    Icon(
+                                      Icons.arrow_circle_up,
+                                      color:
+                                          const Color.fromARGB(255, 0, 61, 110),
+                                    ),
+                                    SizedBox(width: 10),
+                                    Text(
+                                      '${widget.level} LEVEL',
+                                      style: GoogleFonts.inter(
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.w400,
+                                      ),
+                                    ),
                                   ],
                                 ),
                               ],
@@ -128,7 +168,7 @@ class _MainScreenState extends State<MainScreen> {
               ),
             ),
             SizedBox(
-              height: 100,
+              height: 50,
             ),
             Expanded(
               child: SizedBox(
@@ -137,9 +177,10 @@ class _MainScreenState extends State<MainScreen> {
                 child: Stack(children: [
                   Positioned(
                     left: 40,
-                    child: Image(
-                      image: AssetImage('images/Stand1.jpeg'),
-                    ),
+                    child: AnimatedBoyWidget(
+                        path: widget.isFirstPhoto
+                            ? 'images/Stand1.jpeg'
+                            : 'images/Stand2.png'),
                   ),
                   Positioned(
                     left: 0,
@@ -147,7 +188,10 @@ class _MainScreenState extends State<MainScreen> {
                     bottom: 0,
                     top: MediaQuery.of(context).size.height * 0.1,
                     child: InkWell(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (builder) => SkillsScreen()));
+                      },
                       child:
                           Image(image: AssetImage('images/FirstAssetBook.png')),
                     ),
@@ -157,21 +201,12 @@ class _MainScreenState extends State<MainScreen> {
                     right: 350,
                     bottom: MediaQuery.of(context).size.height * 0.30,
                     child: InkWell(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (ctx) => QueezScreen(() {})));
+                      },
                       child: Image(
                           image: AssetImage('images/SecondAssetBook.png')),
-                    ),
-                  ),
-                  Positioned(
-                    left: 350,
-                    right: 0,
-                    bottom: MediaQuery.of(context).size.height * 0.30,
-                    child: InkWell(
-                      onTap: () {
-                        print('123');
-                      },
-                      child:
-                          Image(image: AssetImage('images/ThirdAssetBook.png')),
                     ),
                   ),
                   Positioned(
@@ -185,6 +220,19 @@ class _MainScreenState extends State<MainScreen> {
                       },
                       child: Image(
                           image: AssetImage('images/FourthAssetBook.png')),
+                    ),
+                  ),
+                  Positioned(
+                    left: 350,
+                    right: 0,
+                    bottom: MediaQuery.of(context).size.height * 0.30,
+                    child: InkWell(
+                      onTap: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (builder) => ActivityTrackerScreen()));
+                      },
+                      child:
+                          Image(image: AssetImage('images/ThirdAssetBook.png')),
                     ),
                   ),
                 ]),

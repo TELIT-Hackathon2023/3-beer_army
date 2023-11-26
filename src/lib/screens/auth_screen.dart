@@ -12,15 +12,28 @@ class AuthScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(
-              'JobFinder',
-              style:
-                  GoogleFonts.baloo2(fontSize: 75, fontWeight: FontWeight.bold),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  'TECH ',
+                  style: GoogleFonts.baloo2(
+                      fontSize: 65, fontWeight: FontWeight.bold),
+                ),
+                Text(
+                  'TERRA',
+                  style: GoogleFonts.baloo2(
+                    fontSize: 65,
+                    fontWeight: FontWeight.bold,
+                    color: const Color.fromARGB(255, 185, 0, 0),
+                  ),
+                ),
+              ],
             ),
             const SizedBox(height: 8),
             Text(
               'Playing games to search job',
-              style: GoogleFonts.inter(fontSize: 24, color: Colors.grey),
+              style: GoogleFonts.inter(fontSize: 22, color: Colors.grey),
             ),
             const SizedBox(height: 32),
             Container(
