@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:game_project/screens/auth_screen.dart';
 import 'package:game_project/screens/main_screen.dart';
-import 'package:game_project/widgets/info.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

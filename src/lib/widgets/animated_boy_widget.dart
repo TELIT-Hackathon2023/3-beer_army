@@ -1,9 +1,11 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 
 class AnimatedBoyWidget extends StatefulWidget {
-  AnimatedBoyWidget({required this.path, super.key});
+  AnimatedBoyWidget({required List<String> this.path, super.key});
 
-  String path;
+  List<String> path;
   @override
   _AnimatedBoyWidgetState createState() => _AnimatedBoyWidgetState();
 }
@@ -14,8 +16,12 @@ class _AnimatedBoyWidgetState extends State<AnimatedBoyWidget>
   late Animation<double> _scaleAnimation;
   late Animation<double> _opacityAnimation;
 
+  Timer? _timer;
+
+  late String path;
   @override
   void initState() {
+    path = widget.path[0];
     super.initState();
     _controller = AnimationController(
       duration: const Duration(seconds: 2),
@@ -34,6 +40,21 @@ class _AnimatedBoyWidgetState extends State<AnimatedBoyWidget>
     Future.delayed(const Duration(seconds: 1), () {
       _controller.forward();
     });
+
+    _timer = Timer.periodic(const Duration(seconds: 4), (Timer t) {
+      setState(() {
+        path = widget.path[1];
+      });
+
+      // Wait for 1 second and then revert back to the original path
+      Future.delayed(const Duration(milliseconds: 200), () {
+        if (mounted) {
+          setState(() {
+            path = widget.path[0];
+          });
+        }
+      });
+    });
   }
 
   @override
@@ -48,7 +69,7 @@ class _AnimatedBoyWidgetState extends State<AnimatedBoyWidget>
       scale: _scaleAnimation,
       child: FadeTransition(
         opacity: _opacityAnimation,
-        child: Image.asset(widget.path), // Replace with your actual image path
+        child: Image.asset(path), // Replace with your actual image path
       ),
     );
   }

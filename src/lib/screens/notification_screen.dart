@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
 
 class NotificationScreen extends StatelessWidget {
-  const NotificationScreen({super.key});
-
+  const NotificationScreen({Key? key, this.showAppBar = true})
+      : super(key: key);
+  final bool showAppBar;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        leading: const BackButton(),
-        title: const Text('Notifications'),
-      ),
+      appBar: showAppBar
+          ? AppBar(
+              leading: const BackButton(),
+              title: const Text('Notifications'),
+            )
+          : null,
       body: ListView(
         children: [
           const NotificationTile(
